@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Prototype</title>
+</head>
+<body>
+<script>
+// 	function Person(){
+// 		this.name="zhiangsan";
+// 		this.age=18;
+// 		this.sex='sex';
+		
+// 	}
+// // Prototype 原型对象 构造函数属性  数据类型：object
+// 	// 实现继承
+// 	Person.prototype={
+// 		sleep:function(){
+// 			alter('休息');
+// 		},
+// 		say:function(){
+// 			alert(this.name);
+// 		},
+// 		play:function(){
+// 			alert(`${this.name}玩`);
+// 		},
+// 		// eat:function()
+// 		// {}
+// 	}
+
+
+// 		Person.prototype.eat=function(){
+// 			alert('eat');
+// 		}
+// 	let zhangsan=new Person(); 
+// 	let lisi=new Person();
+// 	// console.log(zhangsan.say()==lisi.say())  	// true
+// 	// console.log(zhangsan.say==lisi.say) // 比较的是地址  false
+// 	console.log([]==[]);  //false 按照地址进行比较
+// 	lisi.eat();
+// 	delete zhangsan.play();
+
+</script>
+
+<!-- instanceof -->
+<!-- 它的作用是判断其左边对象是否为其右边类的实例，返回boolean类型的数据。可以用来判断继承中的子类的实例是否为父类的实现。 -->
+<script>
+	// function Student(){
+	// 	this.name='student';
+	// }
+	// function Person(){
+	// 	this.name='Person';
+	// }
+	// let zhangsan=new Student();
+	// let lisi=new Person();
+	// // 判断张三是否从Student中实例化出来，返回boolean值。
+	// console.log(zhangsan instanceof Student)
+	// console.log(lisi instanceof Student).  
+ //    let arr=[];
+ //    // 从哪个构造函数出来
+    // console.log(arr.constructor)
+    // console.log(zhangsan.constructor)
+
+</script>
+
+<!-- 继承 -->
+ <script>
+	
+	function Person(){
+		this.name='Person';
+		this.age=18;
+		this.sex='nan';
+		this.eat=function(){
+			alert("eat"); 
+		}
+		this.aa=function(){
+			alert('Person构造函数的aa');
+		}
+	}
+	Person.prototype.aa=function(){
+		alert('Person原型的aa')
+	}
+	function Student(){
+		this.classes='wuif1707';
+		this.number= '001';
+		this.skill=function(){
+			alert('fullStuck');
+		}
+		this.aa=function(){
+			alert('student构造函数的aa');
+		}
+	}
+     
+	Student.prototype = new Person();
+	let zhangsan = new Student();
+	let lisi = new Student();
+
+	Student.prototype.aa=function(){
+		alert('student原型的aa')
+	}
+    console.log(lisi.__proto__==Student.prototype);
+    console.log(Student.prototype.__proto__==Person.prototype);
+    console.log(Person.prototype.__proto__==Object.prototype);
+    console.log(Object.prototype.__proto__==null);
+    
+    lisi.aa();
+    console.log(zhangsan.age);
+    console.log(zhangsan);
+// 构造函数、原型对象可以有相同的方法，优先使用构造函数的方法
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>String</title>
+</head>
+<body>
+<script>
+// 所有都只占一个字符
+// let str='abcdabcd';
+// // 截取
+// let str1=str.slice(0,-2);
+// // // let str1=str.substr(2,3);
+// // let str1=str.substr(2);
+// console.log(str1);
+
+
+// str.length=1;
+// // 查找
+// console.log(str.charAt(2));
+// console.log(str.charCodeAt(2));
+// console.log(String.fromCharCode(97));
+
+// // 位置
+// console.log(str.indexOf('abcde'));
+// console.log(str.lastIndexOf('abcd'));
+
+// // 替换
+// console.log(str.replace('abcd','1234'));
+
+// let str=' abcdabcd';
+// let str2=str.match('abcd');
+// console.log(str2);
+
+// // console.log(str);
+// console.log(str.trim());
+
+
+// 分割
+// let str='a-b-c-d';
+// console.log(str.split('-'));
+// console.log(str.split('-',2));
+// // 大小写
+// let str3='abcdabcd';
+// console.log(str3.toUpperCase());
+// console.log(str3.toLowerCase());
+// // 字体颜色与大小
+// document.write(str3.fontcolor('skyblue'));
+// document.write(str3.fontsize(22));
+
+// document.write(str3.sup());
+
+// document.write(str3.small());
+// document.write(str3.big());
+
+
+// function replaceAll(str,rStr){
+// 循环while  条件 存在rStr
+// 存在
+// 替换 replace
+// 更新
+// 返回 retur
+	
+    // star.length的两种方法
+// 	let star='*'.repeat(rStr.length);
+//     // let star='';
+//     // for(let i=0;i<rStr.length;i++){
+//     // 	star+='-';
+//     // }
+// 	while(str.includes(rStr)){
+// 		str=str.replace(rStr,star);
+// 	}
+// 	return str;
+// }
+// let result=replaceAll(str,'cd');
+// console.log(result);
+
+// console.log(str.length);
+// console.log(str);	
+// console.log(str.__proto__);	
+// let arr=[];
+// console.log(arr);
+
+let url = 'http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com';
+// let pos=function(str,rStr){
+// let star='';
+// for(let i=0;i<rStr.length;i++){
+// 		star+='-';
+// }
+// 	let star='*'.repeat(rStr.length);
+// 	let arr=[];
+// 	while(str.includes(rStr)){
+// 		arr.push(str.indexOf(rStr));
+// 		str=str.replace(rStr,star);
+// 	}
+// 	return arr;
+// }
+// console.log(pos(url,'baidu'))
+
+
+function pos(str,rStr){
+	let star='*'.repeat(rStr.length);
+	let arr=[];
+	for(let i=0;i<str.length;i++){
+		if(rStr==str.slice(i,i+rStr.length)){
+			arr.push(i);
+		}
+	}
+	return arr;
+}
+console.log(pos(url,'baidu'))
+
+// 第一种
+// let pos=function(str,rStr){
+// 	let newurl=[];
+// 	let star='*'.repeat(rStr.length);
+// 	while(str.includes(rStr)){
+// 		newurl.push(str.indexOf(rStr));
+//        	str=str.replace(rStr,star);
+// 	}
+// 	return newurl;
+// }
+// let result1=pos(url,'baidu');
+// console.log(result1);
+
+//第二种
+// let pos = function(str,rStr){
+// 	let star='*'.repeat(rStr.length)
+// 	let arr=[];
+// 	for(let i=0;i<str.length;i++){
+// 		if(rStr==str.slice(i,i+5)){
+// 			arr.push(str.indexOf(rStr));
+// 			str=str.replace(rStr,star);
+// 		}
+// 	}
+// 	return arr;
+// }
+// console.log(pos(url,'baidu'))
+  
+
+</script>	
+</body>
+</html>
